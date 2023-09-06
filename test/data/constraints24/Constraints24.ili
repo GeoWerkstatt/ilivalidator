@@ -55,10 +55,10 @@ MODEL Constraints AT "mailto:ceis@localhost" VERSION "2023-09-05" =
 		CLASS Expressions =
 			attr1: 0 .. 99;
 			attr2: 0 .. 99;
-		    MANDATORY CONSTRAINT CheckAddition: attr1 + attr2 <= 150;
-		    MANDATORY CONSTRAINT CheckMultiplication: attr1 * attr2 <= 999;
-		    MANDATORY CONSTRAINT CheckSubtraction: attr1 - attr2 > 0;
-		    MANDATORY CONSTRAINT CheckDivision: attr1 / attr2 > 1;
+		    MANDATORY CONSTRAINT CheckAddition: (attr1 + attr2) <= 150;
+		    MANDATORY CONSTRAINT CheckMultiplication: (attr1 * attr2) <= 999;
+		    MANDATORY CONSTRAINT CheckSubtraction: (attr1 - attr2) > 0;
+		    MANDATORY CONSTRAINT CheckDivision: (attr1 / attr2) > 1;
 		END Expressions;
 
 	END TopicA;
