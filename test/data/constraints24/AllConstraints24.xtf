@@ -44,10 +44,10 @@
             <Constraints:UniqueConstraint ili:tid="o13">
                 <Constraints:attr1>text1</Constraints:attr1>
             </Constraints:UniqueConstraint>
-            <Constraints:Implication ili:tid="o14">
+            <Constraints:Implication ili:tid="o14"> <!-- expected fails: CheckImplication -->
                 <Constraints:attr1>val1</Constraints:attr1>
             </Constraints:Implication>
-            <Constraints:Implication ili:tid="o15">
+            <Constraints:Implication ili:tid="o15"> <!-- expected pass: CheckImplication -->
                 <Constraints:attr1>val1</Constraints:attr1>
                 <Constraints:geom>
                     <geom:surface>
