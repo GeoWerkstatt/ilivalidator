@@ -9,7 +9,7 @@
         <ili:sender>ili2gpkg-4.5.1-SNAPSHOT-34a149ef943889acc815bc9c3ffdb39f6e4918d3</ili:sender>
     </ili:headersection>
     <ili:datasection>
-        <BasketUniqueness:TopicA ili:bid="b1"> 
+        <BasketUniqueness:TopicA ili:bid="b1"> <!-- expected: Set Constraint should fail -->
             <BasketUniqueness:ClassA ili:tid="o1">
                 <BasketUniqueness:attr1>1</BasketUniqueness:attr1>
                 <BasketUniqueness:attr2>a</BasketUniqueness:attr2>
@@ -23,7 +23,7 @@
                 <BasketUniqueness:attr2>b</BasketUniqueness:attr2>
             </BasketUniqueness:ClassA>
         </BasketUniqueness:TopicA>
-        <BasketUniqueness:TopicA ili:bid="b2"> <!-- expected: all datasets in this basket violates the constraint -->
+        <BasketUniqueness:TopicA ili:bid="b2"> <!-- expected: Unique constraint: all datasets in this basket violates / Set constraint: Empty set > no fail -->
             <BasketUniqueness:ClassA ili:tid="o4">
                 <BasketUniqueness:attr1>1</BasketUniqueness:attr1>
                 <BasketUniqueness:attr2>c</BasketUniqueness:attr2>
@@ -36,7 +36,7 @@
                 <BasketUniqueness:attr1>3</BasketUniqueness:attr1>
             </BasketUniqueness:ClassA>
         </BasketUniqueness:TopicA>
-        <BasketUniqueness:TopicA ili:bid="b3"> <!-- expected: all datasets in this basket are fine -->
+        <BasketUniqueness:TopicA ili:bid="b3"> <!-- expected: Unique constraint: all datasets in this basket are fine / Set constraint: all pass -->
             <BasketUniqueness:ClassA ili:tid="o7">
                 <BasketUniqueness:attr1>31</BasketUniqueness:attr1>
                 <BasketUniqueness:attr2>c</BasketUniqueness:attr2>
@@ -45,8 +45,8 @@
                 <BasketUniqueness:attr1>32</BasketUniqueness:attr1>
             </BasketUniqueness:ClassA>
             <BasketUniqueness:ClassA ili:tid="o9">
-                <BasketUniqueness:attr1>33</BasketUniqueness:attr1>
-                <BasketUniqueness:attr2>a</BasketUniqueness:attr2>
+                <BasketUniqueness:attr1>501</BasketUniqueness:attr1>
+                <BasketUniqueness:attr2>b</BasketUniqueness:attr2>
             </BasketUniqueness:ClassA>
         </BasketUniqueness:TopicA>
     </ili:datasection>
