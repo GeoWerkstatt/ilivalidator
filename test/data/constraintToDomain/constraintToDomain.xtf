@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ili:transfer xmlns:ili="http://www.interlis.ch/xtf/2.4/INTERLIS" xmlns:geom="http://www.interlis.ch/geometry/1.0"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns:constraintToDomain="http://www.interlis.ch/xtf/2.4/constraintToDomain">
+    <ili:headersection>
+        <ili:models>
+            <ili:model>constraintToDomain</ili:model>
+        </ili:models>
+        <ili:sender>ili2gpkg-4.5.1-SNAPSHOT-34a149ef943889acc815bc9c3ffdb39f6e4918d3</ili:sender>
+    </ili:headersection>
+    <ili:datasection>
+        <constraintToDomain:TopicA ili:bid="b1">
+            <constraintToDomain:AdditionalConstraint ili:tid="o1"> <!-- expect pass -->
+                <constraintToDomain:attr1>prefix132555</constraintToDomain:attr1>
+            </constraintToDomain:AdditionalConstraint>
+            <constraintToDomain:AdditionalConstraint ili:tid="o2"> <!-- expect fail -->
+                <constraintToDomain:attr1>132555prefix</constraintToDomain:attr1>
+            </constraintToDomain:AdditionalConstraint>
+            <constraintToDomain:AdditionalConstraint ili:tid="o3"> <!-- expect fail -->
+                <constraintToDomain:attr1>pre123555fix</constraintToDomain:attr1>
+            </constraintToDomain:AdditionalConstraint>
+            <constraintToDomain:AdditionalConstraint ili:tid="o4"> <!-- expect pass -->
+                <constraintToDomain:attr1>prefix</constraintToDomain:attr1>
+            </constraintToDomain:AdditionalConstraint>
+        </constraintToDomain:TopicA>
+    </ili:datasection>
+</ili:transfer>
