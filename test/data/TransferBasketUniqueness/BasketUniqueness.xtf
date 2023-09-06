@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ili:transfer xmlns:ili="http://www.interlis.ch/xtf/2.4/INTERLIS" xmlns:geom="http://www.interlis.ch/geometry/1.0"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns:BasketUniqueness="http://www.interlis.ch/xtf/2.4/BasketUniqueness">
+    <ili:headersection>
+        <ili:models>
+            <ili:model>BasketUniqueness</ili:model>
+        </ili:models>
+        <ili:sender>ili2gpkg-4.5.1-SNAPSHOT-34a149ef943889acc815bc9c3ffdb39f6e4918d3</ili:sender>
+    </ili:headersection>
+    <ili:datasection>
+        <BasketUniqueness:TopicA ili:bid="b1"> 
+            <BasketUniqueness:ClassA ili:tid="o1">
+                <BasketUniqueness:attr1>1</BasketUniqueness:attr1>
+                <BasketUniqueness:attr2>a</BasketUniqueness:attr2>
+            </BasketUniqueness:ClassA>
+            <BasketUniqueness:ClassA ili:tid="o2">
+                <BasketUniqueness:attr1>2</BasketUniqueness:attr1>
+                <BasketUniqueness:attr2>b</BasketUniqueness:attr2>
+            </BasketUniqueness:ClassA>
+            <BasketUniqueness:ClassA ili:tid="o3">
+                <BasketUniqueness:attr1>3</BasketUniqueness:attr1>
+                <BasketUniqueness:attr2>b</BasketUniqueness:attr2>
+            </BasketUniqueness:ClassA>
+        </BasketUniqueness:TopicA>
+        <BasketUniqueness:TopicA ili:bid="b2"> <!-- expected: all datasets in this basket violates the constraint -->
+            <BasketUniqueness:ClassA ili:tid="o4">
+                <BasketUniqueness:attr1>1</BasketUniqueness:attr1>
+                <BasketUniqueness:attr2>c</BasketUniqueness:attr2>
+            </BasketUniqueness:ClassA>
+            <BasketUniqueness:ClassA ili:tid="o5">
+                <BasketUniqueness:attr1>2</BasketUniqueness:attr1>
+                <BasketUniqueness:attr2>a</BasketUniqueness:attr2>
+            </BasketUniqueness:ClassA>
+            <BasketUniqueness:ClassA ili:tid="o6">
+                <BasketUniqueness:attr1>3</BasketUniqueness:attr1>
+            </BasketUniqueness:ClassA>
+        </BasketUniqueness:TopicA>
+        <BasketUniqueness:TopicA ili:bid="b3"> <!-- expected: all datasets in this basket are fine -->
+            <BasketUniqueness:ClassA ili:tid="o7">
+                <BasketUniqueness:attr1>31</BasketUniqueness:attr1>
+                <BasketUniqueness:attr2>c</BasketUniqueness:attr2>
+            </BasketUniqueness:ClassA>
+            <BasketUniqueness:ClassA ili:tid="o8">
+                <BasketUniqueness:attr1>32</BasketUniqueness:attr1>
+            </BasketUniqueness:ClassA>
+            <BasketUniqueness:ClassA ili:tid="o9">
+                <BasketUniqueness:attr1>33</BasketUniqueness:attr1>
+                <BasketUniqueness:attr2>a</BasketUniqueness:attr2>
+            </BasketUniqueness:ClassA>
+        </BasketUniqueness:TopicA>
+    </ili:datasection>
+</ili:transfer>
