@@ -77,6 +77,14 @@
             <Constraints:Implication ili:tid="o16">
                 <Constraints:attr1>val2</Constraints:attr1>
             </Constraints:Implication>
+            <Constraints:Expression ili:tid="o17"> <!-- expected fails: CheckSubtraction / CheckDivision -->
+                <Constraints:attr1>5</Constraints:attr1>
+                <Constraints:attr2>7</Constraints:attr2>
+            </Constraints:Expression>
+            <Constraints:Expression ili:tid="o18"> <!-- expected fails: CheckAddition / CheckMultiplication -->
+                <Constraints:attr1>98</Constraints:attr1>
+                <Constraints:attr2>77</Constraints:attr2>
+            </Constraints:Expression>
         </Constraints:TopicA>
     </ili:datasection>
 </ili:transfer>
