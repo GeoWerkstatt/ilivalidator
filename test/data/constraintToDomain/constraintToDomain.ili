@@ -1,0 +1,18 @@
+INTERLIS 2.4;
+
+MODEL constraintToDomain AT "mailto:ceis@localhost" VERSION "2023-09-05" =
+
+    IMPORTS Text_V2;
+
+	DOMAIN
+        desc = TEXT*36 CONSTRAINTS CheckType : Text_V2.matches(THIS; "/^prefix");
+
+	TOPIC TopicA =
+	
+    	CLASS ClassA =
+      		attr1 : desc;
+    	END ClassA;
+
+	END TopicA;
+    
+END constraintToDomain.
